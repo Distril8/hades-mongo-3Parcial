@@ -16,7 +16,7 @@
     <h:body> 
         <div id="page">
             <div class="header">
-                <img src="#{facesContext.externalContext.requestContextPath}/images/bannerHades.png" height="100%" class="img-responsive" />
+                <img src="#{facesContext.externalContext.requestContextPath}/images/bannerPrincipal.png" height="100%" class="img-responsive" />
             </div>
             <div id="content">
                 <h:form>
@@ -41,9 +41,20 @@
                         <p:menuitem value="#{usuarioSesionBean.nombre}" url="#"/>
                         <p:menuitem value="Salir" icon="ui-icon-extlink" action="#{indexBean.logout()}" />
                     </p:menubar>
+                    <div class="body5">
+                        <div class="body6">
+                            <div class="main">
+                                <div class="wrapper">
+                                    <figure class="left"><img src="#{facesContext.externalContext.requestContextPath}/images/letter3.png" alt=""/></figure>
+                                    <h2> Bienvenidos </h2>
+                                    El sistema HADES gestiona la creación de reservas de una empresa de cruceros.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <p:spacer height="10px"/>
                     <ui:insert name="contenido">
- 
+
                     </ui:insert>
                     <p>&nbsp;</p>
                 </h:form>
