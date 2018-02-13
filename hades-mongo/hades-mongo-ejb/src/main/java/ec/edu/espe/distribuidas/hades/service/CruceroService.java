@@ -37,7 +37,7 @@ public class CruceroService {
         return this.cruceroFacade.find().asList();
     }
     
-    public Crucero obtenerPorCodigo(Integer codigo) {
+    public Crucero obtenerPorCodigo(String codigo) {
         return this.cruceroFacade.findOne("codigo",codigo);
     }
     
