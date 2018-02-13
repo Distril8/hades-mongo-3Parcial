@@ -11,6 +11,8 @@ import java.util.Date;
 import java.util.List;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.IndexOptions;
+import org.mongodb.morphia.annotations.Indexed;
 import org.mongodb.morphia.annotations.Reference;
 
 /**
@@ -18,8 +20,10 @@ import org.mongodb.morphia.annotations.Reference;
  * @author hendrix
  */
 @Entity(noClassnameStored = true, value = "tour")
-public class Tour extends BaseEntity{
-    
+public class Tour extends BaseEntity {
+
+    @Indexed(options = @IndexOptions(name = "tour_codigoUIdx", unique = true))
+    private Integer codigo;
     private String nombre;
     private Integer duracion;
     private Date fechaInicio;
@@ -35,6 +39,12 @@ public class Tour extends BaseEntity{
     @Embedded
     private List<PrecioCamarote> precios;
 
+    public Tour()
+    {
+        this.tipoTour = new TipoTour();
+        this.crucero = new Crucero();
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -123,11 +133,19 @@ public class Tour extends BaseEntity{
         this.precios = precios;
     }
 
+    public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
+    }
+
     @Override
     public String toString() {
-        return "Tour{" + "nombre=" + nombre + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", puertoEmbarque=" + puertoEmbarque + ", puertoDesembarque=" + puertoDesembarque + ", precioBase=" + precioBase + '}';
+        return "Tour{" + "codigo=" + codigo + ", nombre=" + nombre + ", duracion=" + duracion + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", puertoEmbarque=" + puertoEmbarque + ", puertoDesembarque=" + puertoDesembarque + ", precioBase=" + precioBase + ", porcentajeMenu=" + porcentajeMenu + ", tipoTour=" + tipoTour + ", crucero=" + crucero + ", precios=" + precios + '}';
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -147,5 +165,5 @@ public class Tour extends BaseEntity{
         }
         return true;
     }
-    
+
 }
