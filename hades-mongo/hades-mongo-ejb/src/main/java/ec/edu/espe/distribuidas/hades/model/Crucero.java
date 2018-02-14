@@ -72,7 +72,7 @@ public class Crucero extends BaseEntity {
     public void setCapacidad(BigDecimal capacidad) {
         this.capacidad = capacidad;
     }
-    
+   
      @Override
     public int hashCode() {
         int hash = 0;

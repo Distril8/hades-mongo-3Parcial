@@ -43,6 +43,10 @@ public class CamaroteService {
         return this.camaroteFacade.findByCrucero(codCrucero);
     }
     
+    public Camarote obtenerPorNumero(Crucero crucero, Integer numero) {
+        return this.camaroteFacade.findByNumero(crucero, numero);
+    }
+    
     public List<Camarote> obtenerPorTipo(TipoCamarote TipoCamaroteBusqueda) {
         return this.camaroteFacade.findByTipo(TipoCamaroteBusqueda);
     }

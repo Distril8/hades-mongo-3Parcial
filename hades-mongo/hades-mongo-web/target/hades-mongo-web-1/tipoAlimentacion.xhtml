@@ -20,7 +20,6 @@
                         <h:outputText value="#{tipoAlimentacion.descripcion}" />
                     </p:column>
                 </p:dataTable>
-                
                 <p:commandButton value="Agregar" actionListener="#{tipoAlimentacionBean.agregar()}" update="@form"/>
                 <p:commandButton id="modBtn" value="Modificar" actionListener="#{tipoAlimentacionBean.modificar()}" update="@form" disabled="#{tipoAlimentacionBean.tipoAlimentacionSel eq null}"/>
                 <p:commandButton value="Eliminar" actionListener="#{tipoAlimentacionBean.eliminar()}" update="@form" disabled="#{tipoAlimentacionBean.tipoAlimentacionSel eq null}" >
@@ -37,7 +36,6 @@
                     </p:panelGrid>
                     <p:commandButton value="Aceptar" actionListener="#{tipoAlimentacionBean.guardar}" update="@form" />
                     <p:commandButton value="Cancelar" actionListener="#{tipoAlimentacionBean.cancelar}" update="@form" immediate="true"/>
-
                 </p:panel>
 
             </p:panel>
