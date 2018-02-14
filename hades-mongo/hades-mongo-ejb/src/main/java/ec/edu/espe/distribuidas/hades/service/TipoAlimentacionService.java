@@ -56,4 +56,5 @@ public class TipoAlimentacionService {
         TipoAlimentacion tipoAlimentacion = this.tipoAlimentacionDao.findOne("codigo", codigo);
         this.tipoAlimentacionDao.delete(tipoAlimentacion);
     }
+    
 }

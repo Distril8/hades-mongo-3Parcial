@@ -46,6 +46,10 @@ public class CamaroteService {
     public List<Camarote> obtenerPorTipo(TipoCamarote TipoCamaroteBusqueda) {
         return this.camaroteFacade.findByTipo(TipoCamaroteBusqueda);
     }
+    
+    public List<Camarote> obtenerTodos() {
+        return this.camaroteFacade.find().asList();
+    }
 //    
 //    public Camarote obtenerInfoCamarote(String codCrucero, Integer numCamarote){
 //        return this.camaroteFacade.findCodTipCamarote(codCrucero, numCamarote);

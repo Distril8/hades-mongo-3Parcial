@@ -61,4 +61,8 @@ public class TourService {
         Tour tour = this.tourDAO.findOne("codigo", codigo);
         this.tourDAO.delete(tour);
     }
+    
+    public List<Tour> obtenerPorCodigoTour(Tour codigo) {
+        return this.tourDAO.findByCodigoTour(codigo);
+    }
 }
