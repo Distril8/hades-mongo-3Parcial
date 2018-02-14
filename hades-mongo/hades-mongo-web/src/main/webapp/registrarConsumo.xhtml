@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//ES" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="/templates/plantilla.xhtml">
+        <ui:define name="contenido">
+            <p:panel id="mainPnl" header="Men&#250;" style="width: 50%; margin: auto;">
+                <p:dataTable var="itemMenu" value="#{consumoBean.itemsMenu}" >
+                    <p:column headerText="Nombre">
+                        <h:outputText value="#{itemMenu.nombre}" />
+                    </p:column>
+                    <p:column headerText="Descripci&#243;n">
+                        <h:outputText value="#{itemMenu.descripcion}" />
+                    </p:column>
+                    <p:column headerText="Precio">
+                        <h:outputText value="#{itemMenu.precio}" />
+                    </p:column>
+                    <p:column headerText="Tipo">
+                        <h:outputText value="#{itemMenu.tipo.texto}" />
+                    </p:column>
+                </p:dataTable>
+                <p:commandButton value="Agregar" actionListener="#{consumoBean.agregar()}" update="@form"/>
+                <p:panel header="Registro" rendered="#{consumoBean.habilitaForm}">
+                    <p:panelGrid columns="2">
+                        <p:outputLabel for="numCamarote" value="Numero de camarote" />
+                        <p:inputText id="numCamarote" value="#{consumoBean.camarote.numero}"/>
+                        <p:outputLabel for="item" value="Item" />
+                        <h:selectOneMenu value="#{consumoBean.consumo.menu}" style="background-color: black" >
+                            <f:selectItems id="item" value="#{consumoBean.itemsMenu}" var="item" itemValue="#{item}" itemLabel="#{item.nombre}"  />                          
+                        </h:selectOneMenu>
+                        <p:outputLabel for="cantidad" value="Cantidad" />
+                        <p:inputText id="cantidad" value="#{consumoBean.consumo.valor}"/>
+                        <p:outputLabel for="referencia" value="referencia" />
+                        <p:inputText id="referencia" value="#{consumoBean.consumo.referencia}"/>
+                    </p:panelGrid>
+                     <p:commandButton value="Aceptar" actionListener="#{consumoBean.guardar}" update="@form" />
+                    <p:commandButton value="Cancelar" actionListener="#{consumoBean.cancelar}" update="@form" immediate="true"/>
+                </p:panel>
+            </p:panel>
+        </ui:define>
+    </ui:composition>
+</html>

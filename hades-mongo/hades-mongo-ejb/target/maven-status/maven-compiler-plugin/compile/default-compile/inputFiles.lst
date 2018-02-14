@@ -36,12 +36,14 @@ D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main
 D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\hades\model\TuristaReserva.java
 D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\hades\dao\TipoTourDAO.java
 D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\hades\service\ClienteService.java
+D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\hades\dao\ConsumoDAO.java
 D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main\java\ec\edu\espe\educat\NewSessionBean.java
 D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\hades\service\FacturaService.java
 D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\hades\model\TipoCamarote.java
 D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\hades\enums\EstadoReservaEnum.java
 D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\hades\service\ReservaService.java
 D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\hades\dao\CamaroteDAO.java
+D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\hades\service\ConsumoService.java
 D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\hades\service\TipoValorService.java
 D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\hades\enums\TipoValorEnum.java
 D:\Proyeto_hades_mongo\hades-mongo-3Parcial\hades-mongo\hades-mongo-ejb\src\main\java\ec\edu\espe\distribuidas\hades\model\TipoTour.java
