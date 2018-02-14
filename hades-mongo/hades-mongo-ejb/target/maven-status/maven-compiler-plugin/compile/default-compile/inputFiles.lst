@@ -38,6 +38,7 @@
 /Users/joel/Distribuidas/hades-mongo-3Parcial/hades-mongo/hades-mongo-ejb/src/main/java/ec/edu/espe/distribuidas/hades/service/ClienteService.java
 /Users/joel/Distribuidas/hades-mongo-3Parcial/hades-mongo/hades-mongo-ejb/src/main/java/ec/edu/espe/distribuidas/hades/enums/MenuEnum.java
 /Users/joel/Distribuidas/hades-mongo-3Parcial/hades-mongo/hades-mongo-ejb/src/main/java/ec/edu/espe/distribuidas/hades/service/FacturaService.java
+/Users/joel/Distribuidas/hades-mongo-3Parcial/hades-mongo/hades-mongo-ejb/src/main/java/ec/edu/espe/distribuidas/hades/service/CamaroteService.java
 /Users/joel/Distribuidas/hades-mongo-3Parcial/hades-mongo/hades-mongo-ejb/src/main/java/ec/edu/espe/distribuidas/hades/model/Factura.java
 /Users/joel/Distribuidas/hades-mongo-3Parcial/hades-mongo/hades-mongo-ejb/src/main/java/ec/edu/espe/distribuidas/hades/model/PrecioCamarote.java
 /Users/joel/Distribuidas/hades-mongo-3Parcial/hades-mongo/hades-mongo-ejb/src/main/java/ec/edu/espe/distribuidas/hades/dao/ReservaDAO.java

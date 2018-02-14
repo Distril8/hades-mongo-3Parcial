@@ -8,8 +8,10 @@
 package ec.edu.espe.distribuidas.hades.service;
 
 import ec.edu.espe.distribuidas.hades.dao.TourDAO;
+import ec.edu.espe.distribuidas.hades.model.TipoTour;
 import ec.edu.espe.distribuidas.hades.model.Tour;
 import ec.edu.espe.distribuidas.nosql.mongo.MongoPersistence;
+import java.util.Date;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -60,5 +62,13 @@ public class TourService {
     public void eliminar(String codigo) {
         Tour tour = this.tourDAO.findOne("codigo", codigo);
         this.tourDAO.delete(tour);
+    }
+    
+    public List<Tour> buscarPorFechas(Date fechaInicioBusqueda, Date fechaFinBusqueda) {
+        return this.tourDAO.findByFechas(fechaInicioBusqueda, fechaFinBusqueda);
+    }
+    
+    public List<Tour> buscarPorTipo(TipoTour tipoTourBusqueda) {
+        return this.tourDAO.findByTipo(tipoTourBusqueda);
     }
 }
