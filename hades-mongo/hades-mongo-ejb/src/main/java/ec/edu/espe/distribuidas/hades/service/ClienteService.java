@@ -56,4 +56,8 @@ public class ClienteService {
         Cliente cliente = this.clienteFacade.findOne("identificacion", identificacion);
         this.clienteFacade.delete(cliente);
     }
+    
+    public List<Cliente> obtenerPorCodigo(Cliente identificacion) {
+        return this.clienteFacade.findByID(identificacion);
+    }
 }

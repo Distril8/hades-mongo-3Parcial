@@ -9,7 +9,21 @@
     <ui:composition template="/templates/plantilla.xhtml">
         <ui:define name="contenido">
             <p:panel id="mainPnl" header="Tours" style="width: 80%; margin: auto;">
-                <p:dataTable var="tour" value="#{tourBean.tours}"
+                <p:panel id="buscPnl" header="Busqueda">
+                    <p:outputLabel for="filtroCmb" value="Buscar:" />
+                    <p:selectOneMenu id="filtroCmb" value="#{tourBean.filtro}" required="true"  valueChangeListener="#{tourBean.cambiarFiltro()}" >
+                        <p:ajax update="@form"/>
+                        <f:selectItem itemLabel="Tipo Tour" itemValue="TIP" />
+                        <f:selectItem itemLabel="Fechas" itemValue="FEC" />
+                    </p:selectOneMenu>
+                    <p:selectOneMenu id="tiposTourCmb" value="#{tourBean.tipoTourBusqueda}" rendered="#{tourBean.enBusquedaPorTipo}">
+                        <f:selectItems var="tipoTour" value="#{tourBean.tiposTours}" itemLabel="#{tipoTour.nombre}" itemValue="#{tipoTour.codigo}" />
+                    </p:selectOneMenu>
+                    <p:calendar id="fechaInicioCal" value="#{tourBean.fechaInicioBusqueda}" showOn="button" pattern="MM/dd/yyyy" rendered="#{not tourBean.enBusquedaPorTipo}" />
+                    <p:calendar id="fechaFinCal" value="#{tourBean.fechaFinBusqueda}" showOn="button" pattern="MM/dd/yyyy" rendered="#{not tourBean.enBusquedaPorTipo}" />
+                    <p:commandButton id="buscarCmd" value="Buscar" actionListener="#{tourBean.buscar()}" update="@form" />
+                </p:panel>
+                <p:dataTable id="toursTbl" var="tour" value="#{tourBean.tours}"
                              selectionMode="single" selection="#{tourBean.tourSel}" rowKey="#{tour.codigo}">
                     <p:ajax event="rowSelect" update="@form" />
                     <p:ajax event="rowUnselect" update="@form" />
@@ -29,10 +43,14 @@
                         <h:outputText value="#{tour.duracion}" />
                     </p:column>
                     <p:column headerText="Fecha Inicio">
-                        <h:outputText value="#{tour.fechaInicio}" />
+                        <h:outputText value="#{tour.fechaInicio}" styleClass="date">
+                            <f:convertDateTime pattern=" MM/d/yyyy" />
+                        </h:outputText>
                     </p:column>
                     <p:column headerText="Fecha Fin">
-                        <h:outputText value="#{tour.fechaFin}" />
+                        <h:outputText value="#{tour.fechaFin}" styleClass="date">
+                            <f:convertDateTime pattern=" MM/d/yyyy" />
+                        </h:outputText>
                     </p:column>
                     <p:column headerText="Puerto Embarque">
                         <h:outputText value="#{tour.puertoEmbarque}" />
@@ -70,9 +88,9 @@
                         <p:outputLabel for="duracion" value="Duracion" />
                         <p:inputText id="duracion" value="#{tourBean.tour.duracion}"  />
                         <p:outputLabel for="fechaIn" value="Fecha Inicio" />
-                        <p:inputText id="fechaIn" value="#{tourBean.tour.fechaInicio}"  />
+                        <p:calendar id="fechaIn" value="#{tourBean.tour.fechaInicio}"  />
                         <p:outputLabel for="fechaFin" value="Fecha Fin" />
-                        <p:inputText id="fechaFin" value="#{tourBean.tour.fechaFin}"  />
+                        <p:calendar id="fechaFin" value="#{tourBean.tour.fechaFin}"  />
                         <p:outputLabel for="puertoEm" value="Puerto Embarque" />
                         <p:inputText id="puertoEm" value="#{tourBean.tour.puertoEmbarque}"  />
                         <p:outputLabel for="puertoDe" value="Puerto Desembarque" />

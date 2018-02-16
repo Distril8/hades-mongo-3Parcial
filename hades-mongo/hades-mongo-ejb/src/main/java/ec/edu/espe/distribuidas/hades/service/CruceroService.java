@@ -9,6 +9,7 @@ package ec.edu.espe.distribuidas.hades.service;
 
 import ec.edu.espe.distribuidas.hades.dao.CruceroDAO;
 import ec.edu.espe.distribuidas.hades.model.Crucero;
+import ec.edu.espe.distribuidas.hades.model.Tour;
 import ec.edu.espe.distribuidas.nosql.mongo.MongoPersistence;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -55,4 +56,9 @@ public class CruceroService {
         Crucero crucero = this.cruceroFacade.findOne("codigo", codigo);
         this.cruceroFacade.delete(crucero);
     }
+    
+    public Crucero obtenerPorTour(Tour tour) {
+        return this.cruceroFacade.findOne("tour",tour);
+    }
+    
 }

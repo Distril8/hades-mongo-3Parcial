@@ -11,8 +11,6 @@ import java.util.Date;
 import java.util.List;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
-import org.mongodb.morphia.annotations.IndexOptions;
-import org.mongodb.morphia.annotations.Indexed;
 import org.mongodb.morphia.annotations.Reference;
 
 /**
@@ -22,7 +20,6 @@ import org.mongodb.morphia.annotations.Reference;
 @Entity(noClassnameStored = true, value = "tour")
 public class Tour extends BaseEntity {
 
-    @Indexed(options = @IndexOptions(name = "tour_codigoUIdx", unique = true))
     private Integer codigo;
     private String nombre;
     private Integer duracion;
