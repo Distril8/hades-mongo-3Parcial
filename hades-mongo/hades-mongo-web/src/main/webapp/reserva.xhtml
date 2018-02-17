@@ -27,11 +27,11 @@
                         </p:selectOneMenu>
                         <p:outputLabel for="tipoCam" value="Tipo de camarote" />
                         <p:outputLabel id="tipoCam" value="#{reservaBean.camarote.tipo.nombre}"/>
-                        <p:outputLabel for="tipoAlimentacion" value="Tipo Alimentacion" />
+                        <p:outputLabel for="tipoAlimentacion" value="Tipo Alimentaci&#243;n" />
                         <p:selectOneMenu id="tipoAlimentacion" value="#{reservaBean}" rendered="true">
                             <f:selectItems var="tipoAlimentacion" value="#{reservaBean.alimentaciones}"  itemValue="#{tipoAlimentacion.codigo}" itemLabel="#{tipoAlimentacion.descripcion}"/>
                         </p:selectOneMenu>
-                        <p:outputLabel value="Fecha Emision" />
+                        <p:outputLabel value="Fecha Emisi&#243;n" />
                         <p:calendar id="fechaEmision" value="#{reservaBean.reserva}" showOn="button" pattern="MM/dd/yyyy"/>
                         <p:outputLabel value="Estado" />
                         <p:selectOneMenu id="estado" >
